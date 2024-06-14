@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">EuroApp</string>
+    <string name="ver_todas_las_sedes">See all the venues</string>
+    <string name="ver_todos_los_artistas">See all the artists</string>
+    <string name="proximamente">Comming soon, more information</string>
+</resources>
