@@ -1,9 +1,12 @@
 package com.svalero.euroapp.view;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 
 import com.svalero.euroapp.R;
@@ -19,5 +22,22 @@ public class MainActivity extends AppCompatActivity {
     public void viewVenuesList (View view) {
         Intent intent = new Intent(this, VenuesListView.class);
         startActivity(intent);
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.action_bar, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        if (item.getItemId() == R.id.action_list_venues) {
+            Intent intent = new Intent(this, VenuesListView.class);
+            startActivity(intent);
+            return true;
+        }
+
+        return super.onOptionsItemSelected(item);
     }
 }
