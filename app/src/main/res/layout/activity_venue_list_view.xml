@@ -14,13 +14,4 @@
         tools:layout_editor_absoluteX="16dp"
         tools:layout_editor_absoluteY="-220dp" />
 
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="AQUI IRAN LAS VENUES"
-        app:layout_constraintBottom_toBottomOf="@+id/venue_list"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/venue_list" />
 </androidx.constraintlayout.widget.ConstraintLayout>

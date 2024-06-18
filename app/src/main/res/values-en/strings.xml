@@ -4,4 +4,6 @@
     <string name="ver_todas_las_sedes">See all the venues</string>
     <string name="ver_todos_los_artistas">See all the artists</string>
     <string name="proximamente">Comming soon, more information</string>
+    <string name="ver_detalles">See details</string>
+
 </resources>
