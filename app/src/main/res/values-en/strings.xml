@@ -11,5 +11,13 @@
     <string name="adaptado">Adapted for the disabled:</string>
     <string name="si">Yes</string>
     <string name="no">No</string>
+    <string name="nombre_de_la_sede">Venue\'s name</string>
+    <string name="ciudad_sede">Host city</string>
+    <string name="aforo_sede">Venue\'s capacity</string>
+    <string name="fecha_inaguración">Inauguration day (YYYY/MM/DD)</string>
+    <string name="adaptado_checkbox">Is the venue adapted for the disabled?</string>
+    <string name="añadir_sede">Add new venue</string>
+    <string name="la_sede_se_ha_registrado_correctamente">The venue has been successfully registered</string>
+    <string name="empty"> </string>
 
 </resources>

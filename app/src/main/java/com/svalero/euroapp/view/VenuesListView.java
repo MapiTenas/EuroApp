@@ -4,13 +4,14 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Toast;
 
 import com.svalero.euroapp.R;
 import com.svalero.euroapp.adapter.VenueAdapter;
 import com.svalero.euroapp.contract.VenueListContract;
-import com.svalero.euroapp.domain.Edition;
 import com.svalero.euroapp.domain.Venue;
 import com.svalero.euroapp.presenter.VenueListPresenter;
 
@@ -56,6 +57,11 @@ public class VenuesListView extends AppCompatActivity implements VenueListContra
     @Override
     public void showMessage(String message) {
         Toast.makeText(this, message, Toast.LENGTH_LONG).show();
+    }
+
+    public void goToAddVenue (View view){
+        Intent intent = new Intent(this, VenueRegisterView.class);
+        startActivity(intent);
     }
 
 

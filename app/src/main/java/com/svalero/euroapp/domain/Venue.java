@@ -26,10 +26,8 @@ public class Venue {
     private double latitude;
     @ColumnInfo
     private double longitude;
-    @ColumnInfo
-    private List<Edition> editions;
 
-    public Venue (long id, String venueName, String city, int capacity, String foundationDate, boolean adapted, double latitude, double longitude, List<Edition> editions){
+    public Venue (long id, String venueName, String city, int capacity, String foundationDate, boolean adapted, double latitude, double longitude){
         this.id = id;
         this.venueName = venueName;
         this.city = city;
@@ -38,7 +36,6 @@ public class Venue {
         this.adapted = adapted;
         this.latitude = latitude;
         this.longitude = longitude;
-        this.editions = editions;
     }
 
     public long getId() {
@@ -105,11 +102,4 @@ public class Venue {
         this.longitude = longitude;
     }
 
-    public List<Edition> getEditions() {
-        return editions;
-    }
-
-    public void setEditions(List<Edition> editions) {
-        this.editions = editions;
-    }
 }
