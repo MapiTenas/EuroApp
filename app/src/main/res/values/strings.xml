@@ -4,4 +4,10 @@
     <string name="ver_todos_los_artistas">Ver todos los artistas</string>
     <string name="proximamente">Proximamente, más información</string>
     <string name="ver_detalles">Ver detalles</string>
+    <string name="ciudad">Ciudad:</string>
+    <string name="aforo">Aforo:</string>
+    <string name="inaugurado">Inaugurado el día:</string>
+    <string name="adaptado">Adaptado para discapacitados:</string>
+    <string name="si">Si</string>
+    <string name="no">No</string>
 </resources>

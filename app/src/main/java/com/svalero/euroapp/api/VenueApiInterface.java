@@ -15,6 +15,9 @@ public interface VenueApiInterface {
     @GET("venues")
     Call<List<Venue>> getVenues();
 
+    @GET("venue/{venueId}")
+    Call<Venue> getVenueById(@Path("venueId") long venueId);
+
     @POST("venues")
     Call<Venue> addVenue(@Body Venue venue);
 

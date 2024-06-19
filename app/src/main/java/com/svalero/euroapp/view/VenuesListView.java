@@ -37,7 +37,6 @@ public class VenuesListView extends AppCompatActivity implements VenueListContra
         recyclerView.setLayoutManager(layoutManager);
         adapter = new VenueAdapter(venues);
         recyclerView.setAdapter(adapter);
-        //populateList();
     }
 
     @Override
@@ -59,13 +58,7 @@ public class VenuesListView extends AppCompatActivity implements VenueListContra
         Toast.makeText(this, message, Toast.LENGTH_LONG).show();
     }
 
-    /*private void populateList() {
-        List<Edition> editions = new ArrayList<>();
-        editions.add(new Edition(1, 24, "XXIV", "Spain", "2024/04/21", "Zaragoza huele a col", true, 5.00, null ));
-        venues = new ArrayList<>();
-        venues.add(new Venue(1, "La Romareda", "Zaragoza", 120000, "2024/06/17", true, 0.0012, -12.112, editions));
 
-    }*/
 
 
 }

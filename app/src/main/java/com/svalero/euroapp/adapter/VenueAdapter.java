@@ -1,5 +1,6 @@
 package com.svalero.euroapp.adapter;
 
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -11,6 +12,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.svalero.euroapp.R;
 import com.svalero.euroapp.domain.Venue;
+import com.svalero.euroapp.view.VenueDetailsView;
 
 import java.util.List;
 
@@ -36,7 +38,7 @@ public class VenueAdapter extends RecyclerView.Adapter<VenueAdapter.VenueHolder>
 
         holder.tvVenueName.setText(venue.getVenueName());
         holder.tvCity.setText(venue.getCity());
-        //Hay que hacer algo con el boton??
+        holder.venueId.setText(String.valueOf(venue.getId()));
     }
 
     @Override
@@ -48,7 +50,9 @@ public class VenueAdapter extends RecyclerView.Adapter<VenueAdapter.VenueHolder>
         public TextView tvVenueName;
         public TextView tvCity;
         public Button detailsButton;
+        public TextView venueId;
         public View parentView;
+
 
         public VenueHolder(@NonNull View view){
             super(view);
@@ -57,9 +61,18 @@ public class VenueAdapter extends RecyclerView.Adapter<VenueAdapter.VenueHolder>
             tvVenueName = view.findViewById(R.id.venue_item_venueName);
             tvCity = view.findViewById(R.id.venue_item_city);
             detailsButton = view.findViewById(R.id.see_details_venue_button);
+            venueId = view.findViewById(R.id.venue_item_id);
+            detailsButton.setOnClickListener(v -> seeVenueDetails(view));
+
         }
     }
 
+    public void seeVenueDetails (View itemView) {
+        long venueId = Long.parseLong(((TextView) itemView.findViewById(R.id.venue_item_id)).getText().toString());
+        Intent intent = new Intent(itemView.getContext(), VenueDetailsView.class);
+        intent.putExtra("venue_item_id", venueId);
+        itemView.getContext().startActivity(intent);
 
+    }
 
 }

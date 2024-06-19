@@ -5,5 +5,11 @@
     <string name="ver_todos_los_artistas">See all the artists</string>
     <string name="proximamente">Comming soon, more information</string>
     <string name="ver_detalles">See details</string>
+    <string name="ciudad">City:</string>
+    <string name="aforo">Capacity:</string>
+    <string name="inaugurado">Inaugurated on:</string>
+    <string name="adaptado">Adapted for the disabled:</string>
+    <string name="si">Yes</string>
+    <string name="no">No</string>
 
 </resources>

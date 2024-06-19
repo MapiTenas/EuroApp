@@ -31,7 +31,16 @@
             android:id="@+id/see_details_venue_button"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:onClick="seeVenueDetails"
             android:text="@string/ver_detalles" />
+
+        <TextView
+            android:id="@+id/venue_item_id"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAlignment="center"
+            android:textColor="#FFFFFF"
+            android:textColorHighlight="#FDFDFD" />
 
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
