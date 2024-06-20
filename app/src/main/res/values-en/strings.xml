@@ -21,6 +21,10 @@
     <string name="empty"> </string>
     <string name="eliminar">Eliminar</string>
     <string name="editar">Editar</string>
+    <string name="esta_seguro">Are you sure?</string>
+    <string name="la_sede_se_ha_eliminado_correctamente">The venue has been successfully deleted</string>
+
+
 
 
 </resources>

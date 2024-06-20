@@ -1,10 +1,12 @@
 package com.svalero.euroapp.view;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.DialogInterface;
 import android.content.Intent;
-import android.graphics.BitmapFactory;
+
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -15,12 +17,7 @@ import com.mapbox.geojson.Point;
 import com.mapbox.maps.CameraOptions;
 import com.mapbox.maps.MapView;
 import com.mapbox.maps.Style;
-import com.mapbox.maps.plugin.annotation.AnnotationConfig;
-import com.mapbox.maps.plugin.annotation.AnnotationPlugin;
-import com.mapbox.maps.plugin.annotation.AnnotationPluginImplKt;
-import com.mapbox.maps.plugin.annotation.generated.PointAnnotationManager;
-import com.mapbox.maps.plugin.annotation.generated.PointAnnotationManagerKt;
-import com.mapbox.maps.plugin.annotation.generated.PointAnnotationOptions;
+
 import com.svalero.euroapp.R;
 import com.svalero.euroapp.contract.VenueDeleteContract;
 import com.svalero.euroapp.contract.VenueDetailsContract;
@@ -30,12 +27,11 @@ import com.svalero.euroapp.presenter.VenueDetailsPresenter;
 
 public class VenueDetailsView extends AppCompatActivity implements Style.OnStyleLoaded, VenueDetailsContract.View, VenueDeleteContract.View {
     private MapView mapView;
-    private PointAnnotationManager pointAnnotationManager;
 
     VenueDetailsContract.Presenter detailsPresenter = new VenueDetailsPresenter(this);
     VenueDeleteContract.Presenter deletePresenter = new VenueDeletePresenter(this);
 
-    private long venueId; // Declarar la variable de instancia para venueId. Robotto
+    private long venueId;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -79,9 +75,29 @@ public class VenueDetailsView extends AppCompatActivity implements Style.OnStyle
 
     }
 
-    public void deleteVenue(View view){
+    // Método para mostrar el diálogo de confirmación antes de eliminar el lugar
+    public void showDeleteConfirmationDialog(View view) {
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setMessage(R.string.esta_seguro);
+        builder.setPositiveButton(R.string.si, new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                deleteVenue();
+            }
+        });
+        builder.setNegativeButton(R.string.no, new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                dialog.dismiss();
+            }
+        });
+        builder.create().show();
+    }
+
+    // Método para eliminar el lugar
+    public void deleteVenue(){
         deletePresenter.deleteOneVenue(venueId);
-        showMessage("Sede eliminada exitosamente");
+        showMessage(R.string.la_sede_se_ha_eliminado_correctamente);
         Intent intent = new Intent(VenueDetailsView.this, VenuesListView.class);
         startActivity(intent);
     }

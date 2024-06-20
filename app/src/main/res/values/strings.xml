@@ -20,4 +20,7 @@
     <string name="empty"> </string>
     <string name="eliminar">Delete</string>
     <string name="editar">Edit</string>
+    <string name="esta_seguro">¿Está seguro?</string>
+    <string name="la_sede_se_ha_eliminado_correctamente">La sede se ha eliminado correctamente</string>
+
 </resources>
