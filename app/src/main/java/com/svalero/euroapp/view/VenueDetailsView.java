@@ -3,9 +3,11 @@ package com.svalero.euroapp.view;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -20,21 +22,27 @@ import com.mapbox.maps.plugin.annotation.generated.PointAnnotationManager;
 import com.mapbox.maps.plugin.annotation.generated.PointAnnotationManagerKt;
 import com.mapbox.maps.plugin.annotation.generated.PointAnnotationOptions;
 import com.svalero.euroapp.R;
+import com.svalero.euroapp.contract.VenueDeleteContract;
 import com.svalero.euroapp.contract.VenueDetailsContract;
 import com.svalero.euroapp.domain.Venue;
+import com.svalero.euroapp.presenter.VenueDeletePresenter;
 import com.svalero.euroapp.presenter.VenueDetailsPresenter;
 
-public class VenueDetailsView extends AppCompatActivity implements Style.OnStyleLoaded, VenueDetailsContract.View {
+public class VenueDetailsView extends AppCompatActivity implements Style.OnStyleLoaded, VenueDetailsContract.View, VenueDeleteContract.View {
     private MapView mapView;
     private PointAnnotationManager pointAnnotationManager;
+
+    VenueDetailsContract.Presenter detailsPresenter = new VenueDetailsPresenter(this);
+    VenueDeleteContract.Presenter deletePresenter = new VenueDeletePresenter(this);
+
+    private long venueId; // Declarar la variable de instancia para venueId. Robotto
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_venue_details_view);
-        VenueDetailsContract.Presenter detailsPresenter = new VenueDetailsPresenter(this);
 
-        long venueId = getIntent().getLongExtra("venue_item_id", 1);
+        venueId = getIntent().getLongExtra("venue_item_id", 1);
         Log.d("VenueDetailsView", "Llega venue_item_id: " + venueId);
 
         mapView = findViewById(R.id.mapView);
@@ -70,6 +78,19 @@ public class VenueDetailsView extends AppCompatActivity implements Style.OnStyle
         setCameraPosition(point);
 
     }
+
+    public void deleteVenue(View view){
+        deletePresenter.deleteOneVenue(venueId);
+        showMessage("Sede eliminada exitosamente");
+        Intent intent = new Intent(VenueDetailsView.this, VenuesListView.class);
+        startActivity(intent);
+    }
+
+    @Override
+    public void showMessage(int stringId) {
+
+    }
+
     @Override
     public void showMessage(String message) {
         Toast.makeText(this, message, Toast.LENGTH_LONG).show();

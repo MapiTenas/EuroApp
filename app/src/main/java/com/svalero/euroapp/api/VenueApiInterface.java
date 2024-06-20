@@ -22,5 +22,5 @@ public interface VenueApiInterface {
     Call<Venue> addVenue(@Body Venue venue);
 
     @DELETE("venue/{venueId}")
-    Call<Void> deleteVenue(@Path("venueId") long venueId);
+    Call<Venue> deleteVenueById(@Path("venueId") long venueId);
 }

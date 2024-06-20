@@ -13,9 +13,11 @@
     <string name="nombre_de_la_sede">Nombre de la sede</string>
     <string name="ciudad_sede">Ciudad anfitriona</string>
     <string name="aforo_sede">Aforo de la sede</string>
-    <string name="fecha_inaguración">Fecha de inauguración (YYYY/MM/DD)</string>
+    <string name="fecha_inaguración">Fecha de inauguración (YYYY-MM-DD)</string>
     <string name="adaptado_checkbox">¿Esta adaptado para discapacitados?</string>
     <string name="añadir_sede">Añadir nueva sede</string>
     <string name="la_sede_se_ha_registrado_correctamente">La sede se ha registrado correctamente</string>
     <string name="empty"> </string>
+    <string name="eliminar">Delete</string>
+    <string name="editar">Edit</string>
 </resources>
