@@ -4,6 +4,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:paddingLeft="20dp"
+    android:paddingRight="20dp"
+    android:paddingBottom="20dp"
     tools:context=".view.VenueDetailsView">
 
     <TextView
@@ -22,14 +25,14 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="parent"
         app:layout_constraintStart_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="parent">
+        app:layout_constraintTop_toTopOf="@+id/venue_id_details_tv">
 
         <TextView
             android:id="@+id/venue_name_details_tv"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="32dp"
-            android:padding="10dp"
+            android:padding="5dp"
             android:textAlignment="center"
             android:textSize="24sp"
             android:textStyle="bold" />
@@ -143,6 +146,14 @@
                 android:textAlignment="center"
                 android:textSize="16sp" />
         </LinearLayout>
+
+        <com.mapbox.maps.MapView
+            android:id="@+id/mapView"
+            android:layout_width="match_parent"
+            android:layout_height="378dp"
+            app:mapbox_cameraTargetLat="41.65606"
+            app:mapbox_cameraTargetLng="-0.87734"
+            app:mapbox_cameraZoom="9.0" />
 
     </LinearLayout>
 
