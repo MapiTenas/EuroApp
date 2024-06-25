@@ -9,6 +9,7 @@ import retrofit2.http.Body;
 import retrofit2.http.DELETE;
 import retrofit2.http.GET;
 import retrofit2.http.POST;
+import retrofit2.http.PUT;
 import retrofit2.http.Path;
 
 public interface VenueApiInterface {
@@ -23,4 +24,7 @@ public interface VenueApiInterface {
 
     @DELETE("venue/{venueId}")
     Call<Venue> deleteVenueById(@Path("venueId") long venueId);
+
+    @PUT("venue/{venueId}")
+    Call<Venue> editVenueById(@Path("venueId")long venueId,@Body Venue venue);
 }

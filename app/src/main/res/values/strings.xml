@@ -22,5 +22,10 @@
     <string name="editar">Edit</string>
     <string name="esta_seguro">¿Está seguro?</string>
     <string name="la_sede_se_ha_eliminado_correctamente">La sede se ha eliminado correctamente</string>
-
+    <string name="error_desconocido">Error desconocido</string>
+    <string name="respuesta_error">Error al procesar la respuesta de error</string>
+    <string name="editar_sede">Editar sede</string>
+    <string name="completa_campos">Por favor, complete todos los campos</string>
+    <string name="capacidad_valida">La capacidad debe ser un número</string>
+    <string name="latlong_validos">Latitud y longitud deben ser un números válidos</string>
 </resources>

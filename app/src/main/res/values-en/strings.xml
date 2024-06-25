@@ -19,12 +19,14 @@
     <string name="añadir_sede">Add new venue</string>
     <string name="la_sede_se_ha_registrado_correctamente">The venue has been successfully registered</string>
     <string name="empty"> </string>
-    <string name="eliminar">Eliminar</string>
-    <string name="editar">Editar</string>
+    <string name="eliminar">Delete</string>
+    <string name="editar">Edit</string>
     <string name="esta_seguro">Are you sure?</string>
     <string name="la_sede_se_ha_eliminado_correctamente">The venue has been successfully deleted</string>
-
-
-
-
+    <string name="error_desconocido">Unknown error</string>
+    <string name="respuesta_error">Error processing error response</string>
+    <string name="editar_sede">Edit venue</string>
+    <string name="completa_campos">Please, complete all the fields</string>
+    <string name="capacidad_valida">Capacity must be a number</string>
+    <string name="latlong_validos">Latitude and longitude must be valid numbers</string>
 </resources>

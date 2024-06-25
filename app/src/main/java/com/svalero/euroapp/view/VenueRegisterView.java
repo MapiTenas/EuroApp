@@ -3,6 +3,7 @@ package com.svalero.euroapp.view;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.util.Log;
@@ -17,7 +18,6 @@ import com.mapbox.maps.Style;
 import com.mapbox.maps.plugin.annotation.AnnotationConfig;
 import com.mapbox.maps.plugin.annotation.AnnotationPlugin;
 import com.mapbox.maps.plugin.annotation.AnnotationPluginImplKt;
-import com.mapbox.maps.plugin.annotation.generated.PointAnnotation;
 import com.mapbox.maps.plugin.annotation.generated.PointAnnotationManager;
 import com.mapbox.maps.plugin.annotation.generated.PointAnnotationManagerKt;
 import com.mapbox.maps.plugin.annotation.generated.PointAnnotationOptions;
@@ -42,7 +42,7 @@ public class VenueRegisterView extends AppCompatActivity implements Style.OnStyl
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_venue_register);
 
-        mapView = findViewById(R.id.mapView);
+        mapView = findViewById(R.id.mapView_edit);
         mapView.getMapboxMap().loadStyleUri(Style.MAPBOX_STREETS, this);
         initializePointAnnotationManager();
 
@@ -61,8 +61,8 @@ public class VenueRegisterView extends AppCompatActivity implements Style.OnStyl
 
         String venueName = etVenueName.getText().toString();
         String city = etVenueCity.getText().toString();
-        String capacityStr = etVenueCapacity.getText().toString(); // Obtener el texto correctamente
-        String foundationDate = etFoundationDate.getText().toString(); // Obtener el texto correctamente
+        String capacityStr = etVenueCapacity.getText().toString();
+        String foundationDate = etFoundationDate.getText().toString();
         boolean adapted = adaptedDissabled.isChecked();
 
         Log.d("VenueRegisterView", "Venue Name: " + venueName);
@@ -71,21 +71,26 @@ public class VenueRegisterView extends AppCompatActivity implements Style.OnStyl
         Log.d("VenueRegisterView", "Foundation Date: " + foundationDate);
         Log.d("VenueRegisterView", "Adapted: " + adapted);
 
-        // Asegúrate de que el texto no esté vacío antes de intentar convertirlo
-        if (!capacityStr.isEmpty()) {
-            try {
-                int capacity = Integer.parseInt(capacityStr);
-                Log.d("VenueRegisterView", "Parsed Capacity: " + capacity);
-                Venue venue = new Venue(0, venueName, city, capacity, foundationDate, adapted, currentPoint.latitude(), currentPoint.longitude());
-                presenter.registerVenue(venue);
-            } catch (NumberFormatException e) {
-                Log.e("VenueRegisterView", "Error parsing capacity: " + e.getMessage());
-                e.printStackTrace();
-                Toast.makeText(this, "Invalid capacity format", Toast.LENGTH_LONG).show();
-            }
-        } else {
-            Toast.makeText(this, "Capacity cannot be empty", Toast.LENGTH_LONG).show();
+        if (venueName.isEmpty() || city.isEmpty() || capacityStr.isEmpty() || foundationDate.isEmpty()) {
+            Toast.makeText(this, R.string.completa_campos, Toast.LENGTH_LONG).show();
+            return;
         }
+
+        int capacity;
+        try {
+            capacity = Integer.parseInt(capacityStr);
+        } catch (NumberFormatException e) {
+            Toast.makeText(this, R.string.capacidad_valida, Toast.LENGTH_LONG).show();
+            return;
+        }
+
+        double latitude = currentPoint.latitude();
+        double longitude = currentPoint.longitude();
+
+        Venue venue = new Venue(0, venueName, city, capacity, foundationDate, adapted, latitude, longitude);
+        presenter.registerVenue(venue);
+        Intent intent = new Intent(this, VenuesListView.class);
+        startActivity(intent);
     }
 
     @Override

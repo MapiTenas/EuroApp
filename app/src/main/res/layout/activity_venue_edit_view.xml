@@ -5,10 +5,10 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:padding="20dp"
-    tools:context=".view.VenueRegisterView">
+    tools:context=".view.VenueEditView">
 
     <LinearLayout
-        android:id="@+id/linearLayout2"
+        android:id="@+id/linearLayout3"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:orientation="vertical"
@@ -16,40 +16,59 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/editar_sede"
+            android:textAlignment="center"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
         <EditText
-            android:id="@+id/venue_name"
+            android:id="@+id/edit_venue_name"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
-            android:hint="@string/nombre_de_la_sede"
             android:inputType="text" />
 
         <EditText
-            android:id="@+id/venue_city"
+            android:id="@+id/edit_venue_city"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
-            android:hint="@string/ciudad_sede"
             android:inputType="text" />
 
         <EditText
-            android:id="@+id/venue_capacity"
+            android:id="@+id/edit_venue_capacity"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
-            android:hint="@string/aforo_sede"
-            android:inputType="number" />
+            android:inputType="text" />
 
         <EditText
-            android:id="@+id/foundation_date"
+            android:id="@+id/edit_venue_foundation"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
-            android:hint="@string/fecha_inaguración"
-            android:inputType="datetime|date" />
+            android:inputType="text" />
+
+        <EditText
+            android:id="@+id/edit_venue_longitude"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="text" />
+
+        <EditText
+            android:id="@+id/edit_venue_latitude"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="text" />
 
         <CheckBox
-            android:id="@+id/adapted"
+            android:id="@+id/adapted_edit"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/adaptado_checkbox" />
@@ -72,11 +91,12 @@
         tools:layout_editor_absoluteX="20dp">
 
         <Button
-            android:id="@+id/button"
+            android:id="@+id/editVenue_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:onClick="addVenue"
-            android:text="@string/añadir_sede" />
+            android:backgroundTint="@android:color/holo_blue_dark"
+            android:onClick="editThisVenue"
+            android:text="@string/editar_sede" />
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
