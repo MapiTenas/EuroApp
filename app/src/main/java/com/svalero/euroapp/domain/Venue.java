@@ -1,30 +1,12 @@
 package com.svalero.euroapp.domain;
-
-import androidx.annotation.NonNull;
-import androidx.room.ColumnInfo;
-import androidx.room.Entity;
-import androidx.room.PrimaryKey;
-
-import java.util.List;
-
-
-@Entity
 public class Venue {
-    @PrimaryKey
-    private @NonNull long id;
-    @ColumnInfo
+    private long id;
     private String venueName;
-    @ColumnInfo
     private String city;
-    @ColumnInfo
     private int capacity;
-    @ColumnInfo
     private String foundationDate;
-    @ColumnInfo
     private boolean adapted;
-    @ColumnInfo
     private double latitude;
-    @ColumnInfo
     private double longitude;
 
     public Venue (long id, String venueName, String city, int capacity, String foundationDate, boolean adapted, double latitude, double longitude){

@@ -29,4 +29,25 @@
     <string name="completa_campos">Please, complete all the fields</string>
     <string name="capacidad_valida">Capacity must be a number</string>
     <string name="latlong_validos">Latitude and longitude must be valid numbers</string>
+    <string name="fe_nac">Birthdate:</string>
+    <string name="pais_origen">Origin country:</string>
+    <string name="cd_pub">Published cd\'s: </string>
+    <string name="instagram">Instagram followers: </string>
+    <string name="activo">Active: </string>
+    <string name="el_artista_se_ha_eliminado_correctamente">The artist has been successfully deleted</string>
+    <string name="el_artista_se_ha_registrado_correctamente">The artist has been successfully registered</string>
+    <string name="nombre_artista">Artist name</string>
+    <string name="fe_nac_regis">Birthday (YYYY-MM-DD)</string>
+    <string name="pais_registro">Origin country</string>
+    <string name="cd_registro">Published cd\'s</string>
+    <string name="activo_regis">Is the artist still active?</string>
+    <string name="instagram_regis">Instagram followers(.0)</string>
+    <string name="añadir_artista">Add new artist</string>
+    <string name="cd_valido">Cds must be a number</string>
+    <string name="followers_valido">Followers must be a number (.0)</string>
+    <string name="modificacion_exitosa">The register has been modified</string>
+    <string name="editar_artista">Edit artist</string>
+    <string name="activo_checkbox">Is the artist active?</string>
+    <string name="igfollowers_validos">Instagram followers must be a valid number(.0)</string>
+
 </resources>

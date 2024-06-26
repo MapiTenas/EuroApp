@@ -20,13 +20,12 @@ public class VenueRegisterModel implements VenueRegisterContract.Model {
         addVenueCall.enqueue(new Callback<Venue>() {
             @Override
             public void onResponse(Call<Venue> call, Response<Venue> response) {
-                // TODO Faltaría validar casos de respuesta con errores (400, 500, . . .)
                 listener.onRegisterVenueSuccess();
             }
 
             @Override
             public void onFailure(Call<Venue> call, Throwable t) {
-                Log.e("addTask", t.getMessage());
+                Log.e("addVenue", t.getMessage());
                 listener.onRegisterVenueError("No se ha podido conectar con el servidor");
 
             }

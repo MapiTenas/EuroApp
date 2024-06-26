@@ -28,6 +28,7 @@
             android:id="@+id/artist_button"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:onClick="viewArtistsList"
             android:text="@string/ver_todos_los_artistas" />
     </LinearLayout>
 

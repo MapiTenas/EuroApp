@@ -40,7 +40,7 @@ public class VenueEditModel implements VenueEditContract.Model {
                 if (response.code() == HTTP_OK) {
                     Log.e("editVenue", response.message());
                     listener.onLoadEditOneVenueSuccess();
-                    Toast.makeText(context, "Registro exitoso", Toast.LENGTH_LONG).show();
+                    Toast.makeText(context, R.string.modificacion_exitosa, Toast.LENGTH_LONG).show();
                 } else if (response.code() == 400) {
                     Toast.makeText(context, "Error de validación en los datos de entrada", Toast.LENGTH_LONG).show();
                 } else {

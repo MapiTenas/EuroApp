@@ -15,8 +15,8 @@ public class VenueDeleteModel implements VenueDeleteContract.Model {
     @Override
     public void loadDeleteOneVenue(long venueId, OnLoadDeleteOneVenueListener listener) {
         VenueApiInterface api = VenueApi.buildInstance();
-        Call<Venue> deleteAirportCall = api.deleteVenueById(venueId);
-        deleteAirportCall.enqueue(new Callback<Venue>() {
+        Call<Venue> deleteVenueCall = api.deleteVenueById(venueId);
+        deleteVenueCall.enqueue(new Callback<Venue>() {
             @Override
             public void onResponse(Call<Venue> call, Response<Venue> response) {
                 if (response.isSuccessful()) {

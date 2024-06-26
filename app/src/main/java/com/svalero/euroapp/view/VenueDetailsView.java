@@ -29,14 +29,6 @@ import com.svalero.euroapp.presenter.VenueDetailsPresenter;
 public class VenueDetailsView extends AppCompatActivity implements Style.OnStyleLoaded, VenueDetailsContract.View, VenueDeleteContract.View, VenueEditContract.View {
     private MapView mapView;
     private long venueId;
-    private String venueName;
-    private String city;
-    private int capacity;
-    private String foundationDate;
-    private boolean adapted;
-
-
-
 
     VenueDetailsContract.Presenter detailsPresenter = new VenueDetailsPresenter(this);
     VenueDeleteContract.Presenter deletePresenter = new VenueDeletePresenter(this);
@@ -142,7 +134,7 @@ public class VenueDetailsView extends AppCompatActivity implements Style.OnStyle
 
     @Override
     public void showMessage(int stringId) {
-
+        showMessage(getResources().getString(stringId));
     }
 
     @Override

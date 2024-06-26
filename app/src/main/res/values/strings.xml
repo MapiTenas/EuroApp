@@ -18,8 +18,8 @@
     <string name="añadir_sede">Añadir nueva sede</string>
     <string name="la_sede_se_ha_registrado_correctamente">La sede se ha registrado correctamente</string>
     <string name="empty"> </string>
-    <string name="eliminar">Delete</string>
-    <string name="editar">Edit</string>
+    <string name="eliminar">Eliminar</string>
+    <string name="editar">Editar</string>
     <string name="esta_seguro">¿Está seguro?</string>
     <string name="la_sede_se_ha_eliminado_correctamente">La sede se ha eliminado correctamente</string>
     <string name="error_desconocido">Error desconocido</string>
@@ -28,4 +28,25 @@
     <string name="completa_campos">Por favor, complete todos los campos</string>
     <string name="capacidad_valida">La capacidad debe ser un número</string>
     <string name="latlong_validos">Latitud y longitud deben ser un números válidos</string>
+    <string name="fe_nac">Fecha de nacimiento:</string>
+    <string name="pais_origen">Pais de origen:</string>
+    <string name="cd_pub">Cd\'s publicados: </string>
+    <string name="instagram">Seguidores en instagram: </string>
+    <string name="activo">En activo: </string>
+    <string name="el_artista_se_ha_eliminado_correctamente">El artista de ha eliminado exitosamente</string>
+    <string name="el_artista_se_ha_registrado_correctamente">El artista se ha registrado correctamente</string>
+    <string name="nombre_artista">Nombre del artista</string>
+    <string name="fe_nac_regis">Fecha de nacimiento (YYYY-MM-DD)</string>
+    <string name="pais_registro">Pais de origen</string>
+    <string name="cd_registro">Cd\'s publicados</string>
+    <string name="activo_regis">¿Sigue en artista en activo?</string>
+    <string name="instagram_regis">Seguidores en instagram (.0)</string>
+    <string name="añadir_artista">Añadir nuevo artista</string>
+    <string name="cd_valido">Los cds deben ser un número</string>
+    <string name="followers_valido">Los followers deben ser un número (.0)</string>
+    <string name="modificacion_exitosa">El registro se ha modificado</string>
+    <string name="editar_artista">Editar artista</string>
+    <string name="activo_checkbox">¿El artista está en activo?</string>
+    <string name="igfollowers_validos">Los seguidores de Instagram debe ser un número válido (.0)</string>
+
 </resources>
