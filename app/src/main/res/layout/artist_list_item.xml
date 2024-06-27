@@ -27,12 +27,27 @@
             android:textAlignment="center"
             android:textSize="16sp" />
 
-        <Button
-            android:id="@+id/see_details_artist_button"
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:onClick="seeArtistDetails"
-            android:text="@string/ver_detalles" />
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/see_details_artist_button"
+                android:layout_width="305dp"
+                android:layout_height="wrap_content"
+                android:onClick="seeArtistDetails"
+                android:text="@string/ver_detalles" />
+
+            <ImageButton
+                android:id="@+id/fav_artist_button"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@android:color/transparent"
+                android:src="@drawable/not_fav" />
+
+        </LinearLayout>
 
         <TextView
             android:id="@+id/artist_item_id"

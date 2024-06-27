@@ -3,6 +3,7 @@ package com.svalero.euroapp.view;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+import androidx.room.Room;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -13,6 +14,7 @@ import android.widget.Toast;
 import com.svalero.euroapp.R;
 import com.svalero.euroapp.adapter.ArtistAdapter;
 import com.svalero.euroapp.contract.ArtistListContract;
+import com.svalero.euroapp.db.AppDatabase;
 import com.svalero.euroapp.domain.Artist;
 
 import com.svalero.euroapp.presenter.ArtistListPresenter;
@@ -25,6 +27,7 @@ public class ArtistsListView extends AppCompatActivity implements ArtistListCont
     private List<Artist> artists;
     private ArtistAdapter adapter;
     private ArtistListContract.Presenter presenter;
+    private AppDatabase appDatabase;
 
 
     @Override
@@ -35,12 +38,18 @@ public class ArtistsListView extends AppCompatActivity implements ArtistListCont
         presenter = new ArtistListPresenter(this);
 
         artists = new ArrayList<>();
+        appDatabase = Room.databaseBuilder(this,AppDatabase.class,"favArtistDao")
+                .allowMainThreadQueries()
+                .build();
+
+
         RecyclerView recyclerView = findViewById(R.id.artist_list);
         recyclerView.setHasFixedSize(true);
         LinearLayoutManager layoutManager = new LinearLayoutManager(this);
         recyclerView.setLayoutManager(layoutManager);
         adapter = new ArtistAdapter(artists);
         recyclerView.setAdapter(adapter);
+        adapter.setDatabase(appDatabase);
 
     }
 
