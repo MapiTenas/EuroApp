@@ -18,6 +18,9 @@
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
         <activity
+            android:name=".view.FavArtistListView"
+            android:exported="false" />
+        <activity
             android:name=".view.ArtistEditView"
             android:exported="false" />
         <activity

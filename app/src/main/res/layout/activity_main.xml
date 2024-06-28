@@ -30,6 +30,7 @@
             android:layout_height="wrap_content"
             android:onClick="viewArtistsList"
             android:text="@string/ver_todos_los_artistas" />
+
     </LinearLayout>
 
     <ImageView
@@ -53,5 +54,18 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/linearLayout"
         app:layout_constraintVertical_bias="0.248" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/see_favs_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="76dp"
+        android:clickable="true"
+        android:onClick="viewFavsList"
+        android:src="@drawable/fav"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
