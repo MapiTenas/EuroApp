@@ -9,6 +9,8 @@ import android.content.Intent;
 
 import android.os.Bundle;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -156,5 +158,43 @@ public class VenueDetailsView extends AppCompatActivity implements Style.OnStyle
                 .bearing(-17.6)
                 .build();
         mapView.getMapboxMap().setCamera(cameraPosition);
+    }
+
+    //Código relacionado con el actionbar y su funcionamiento
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.action_bar, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        if (item.getItemId() == R.id.action_list_venues) {
+            Intent intent = new Intent(this, VenuesListView.class);
+            startActivity(intent);
+            return true;
+        }
+
+        if (item.getItemId() == R.id.action_list_artist) {
+            Intent intent = new Intent(this, ArtistsListView.class);
+            startActivity(intent);
+            return true;
+        }
+        if (item.getItemId() == R.id.action_add_venue) {
+            Intent intent = new Intent(this, VenueRegisterView.class);
+            startActivity(intent);
+            return true;
+        }
+        if (item.getItemId() == R.id.action_add_artist) {
+            Intent intent = new Intent(this, ArtistRegisterView.class);
+            startActivity(intent);
+            return true;
+        }
+        if (item.getItemId() == R.id.action_list_favs) {
+            Intent intent = new Intent(this, FavArtistListView.class);
+            startActivity(intent);
+            return true;
+        }
+        return super.onOptionsItemSelected(item);
     }
 }

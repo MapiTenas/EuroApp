@@ -11,4 +11,19 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:title="@string/ver_todos_los_artistas" />
+    <item
+        android:id="@+id/action_add_venue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:title="@string/añadir_sede" />
+    <item
+        android:id="@+id/action_add_artist"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:title="@string/añadir_artista" />
+    <item
+        android:id="@+id/action_list_favs"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:title="@string/ver_favs" />
 </menu>

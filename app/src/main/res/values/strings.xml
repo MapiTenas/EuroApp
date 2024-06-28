@@ -48,5 +48,5 @@
     <string name="editar_artista">Editar artista</string>
     <string name="activo_checkbox">¿El artista está en activo?</string>
     <string name="igfollowers_validos">Los seguidores de Instagram debe ser un número válido (.0)</string>
-
+    <string name="ver_favs">Ver tus favoritos</string>
 </resources>
